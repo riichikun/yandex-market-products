@@ -1,5 +1,6 @@
+<?php
 /*
- *  Copyright 2025.  Baks.dev <admin@baks.dev>
+ * Copyright 2025.  Baks.dev <admin@baks.dev>
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +21,21 @@
  *  THE SOFTWARE.
  */
 
+declare(strict_types=1);
+
+namespace BaksDev\Yandex\Market\Products\Type\Image;
+
+use BaksDev\Core\Type\UidType\UidType;
+
+final class YandexMarketProductImageType extends UidType
+{
+    public function getClassType(): string
+    {
+        return YandexMarketProductImageUid::class;
+    }
+
+    public function getName(): string
+    {
+        return YandexMarketProductImageUid::TYPE;
+    }
+}

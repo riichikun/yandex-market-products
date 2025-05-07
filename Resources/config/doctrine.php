@@ -28,6 +28,10 @@ use BaksDev\Yandex\Market\Products\Type\Card\Event\YaMarketProductsCardEventType
 use BaksDev\Yandex\Market\Products\Type\Card\Event\YaMarketProductsCardEventUid;
 use BaksDev\Yandex\Market\Products\Type\Card\Id\YaMarketProductsCardType;
 use BaksDev\Yandex\Market\Products\Type\Card\Id\YaMarketProductsCardUid;
+use BaksDev\Yandex\Market\Products\Type\Id\YandexMarketProductType;
+use BaksDev\Yandex\Market\Products\Type\Id\YandexMarketProductUid;
+use BaksDev\Yandex\Market\Products\Type\Image\YandexMarketProductImageType;
+use BaksDev\Yandex\Market\Products\Type\Image\YandexMarketProductImageUid;
 use BaksDev\Yandex\Market\Products\Type\Settings\Event\YaMarketProductsSettingsEventType;
 use BaksDev\Yandex\Market\Products\Type\Settings\Event\YaMarketProductsSettingsEventUid;
 use BaksDev\Yandex\Market\Products\Type\Settings\Property\YaMarketProductProperty;
@@ -41,6 +45,9 @@ return static function(DoctrineConfig $doctrine): void {
 
     $doctrine->dbal()->type(YaMarketProductsCardUid::TYPE)->class(YaMarketProductsCardType::class);
     $doctrine->dbal()->type(YaMarketProductsCardEventUid::TYPE)->class(YaMarketProductsCardEventType::class);
+
+    $doctrine->dbal()->type(YandexMarketProductUid::TYPE)->class(YandexMarketProductType::class);
+    $doctrine->dbal()->type(YandexMarketProductImageUid::TYPE)->class(YandexMarketProductImageType::class);
 
 
     $emDefault = $doctrine->orm()->entityManager('default')->autoMapping(true);
